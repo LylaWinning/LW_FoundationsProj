@@ -28,7 +28,7 @@ public class PickUpBox : MonoBehaviour
                 if (isPickedUp)
                 {
                     transform.SetParent(player);
-                    transform.localPosition = new Vector3(0, 1, 2); // Adjust position as needed
+                    transform.localPosition = new Vector3(0, 1, 1); // Adjust position as needed
                 }
                 else
                 {
