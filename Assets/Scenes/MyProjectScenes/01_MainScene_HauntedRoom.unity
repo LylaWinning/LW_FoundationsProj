@@ -1913,7 +1913,7 @@ MonoBehaviour:
   gravity: 10
   lookSpeed: 2
   lookXLimit: 45
-  defaultHeight: 2
+  defaultHeight: 3
   crouchHeight: 1
   crouchSpeed: 3
 --- !u!143 &1720394154
