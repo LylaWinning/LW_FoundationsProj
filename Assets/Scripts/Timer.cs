@@ -5,8 +5,8 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI timer_Txt;
-    [SerializeField] private TextMeshProUGUI win_Lose_Txt;
+    //[SerializeField] private TextMeshProUGUI timer_Txt;
+   // [SerializeField] private TextMeshProUGUI win_Lose_Txt;
     [SerializeField] private float time_Left;
     
 
@@ -27,8 +27,9 @@ public class Timer : MonoBehaviour
         if(time_Left <= 0)
         {
             Debug.Log("Time's Up!");
-            win_Lose_Txt.gameObject.SetActive(true);
-            win_Lose_Txt.text = "You didn't capture all the ghosts in time! You Lose!";
+            UIHandler.Instance.win_Lose_Msg.gameObject.SetActive(true);
+            UIHandler.Instance.win_Lose_Msg.text = "You didn't capture all the ghosts in time! You Lose!";
+            UIHandler.Instance.On_Mission_Failed_Event.Invoke();
             time_Left = 0;
             StopTimer();
             Cursor.lockState = CursorLockMode.None;
@@ -45,7 +46,7 @@ public class Timer : MonoBehaviour
         int min = Mathf.FloorToInt(time_Left / 60);
         int sec = Mathf.FloorToInt(time_Left % 60);
 
-        timer_Txt.text = min.ToString("00") + ":"  + sec.ToString("00");
+        UIHandler.Instance.timer_Txt.text = min.ToString("00") + ":"  + sec.ToString("00");
     }
 
     public void StopTimer()

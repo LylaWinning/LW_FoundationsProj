@@ -83,7 +83,7 @@ void Update()
     }
 
     [Space(20)]
-    [SerializeField] TextMeshProUGUI score_txt;
+    //[SerializeField] TextMeshProUGUI score_txt;
 
     private int score = 0;
     private void OnTriggerEnter(Collider other)
@@ -95,7 +95,7 @@ void Update()
         }
     }
 
-    private void CollectGhost()
+  /*  private void CollectGhost()
     {
 
         score++;
@@ -105,6 +105,21 @@ void Update()
         {
             LevelHandler.Instance.win_Lose_Msg.gameObject.SetActive(true);
             LevelHandler.Instance.win_Lose_Msg.text = "You win!";
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }*/
+     private void CollectGhost()
+    {
+
+        score++;
+        UIHandler.Instance.score_txt.text = score.ToString();
+
+        if (score >= LevelHandler.Instance.levels[GameManager.Instance.current_Level].Ghost.Length)
+        {
+            UIHandler.Instance.On_Mission_Complete_Event.Invoke();
+            UIHandler.Instance.win_Lose_Msg.gameObject.SetActive(true);
+            UIHandler.Instance.win_Lose_Msg.text = "You win!";
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }

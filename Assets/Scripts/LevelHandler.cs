@@ -5,7 +5,7 @@ public class LevelHandler : MonoBehaviour
 {
     public static LevelHandler Instance;
 
-    public TextMeshProUGUI win_Lose_Msg;
+    //public TextMeshProUGUI win_Lose_Msg;
 
 
     public Levels[] levels;
