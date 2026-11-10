@@ -45,19 +45,22 @@ private void Awake()
 
     }
 
-    private string show_Level_Failed()
-    {
-        throw new NotImplementedException();
-    }
 
     IEnumerator show_Level_Complete()
     {
         win_Lose_Msg.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
         win_Lose_Msg.gameObject.SetActive(false);
-        mission_Failed_Panel.SetActive(true);
+        mission_Complete_Panel.SetActive(true);
     }
 
+IEnumerator show_Level_Failed()
+    {
+        win_Lose_Msg.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        win_Lose_Msg.gameObject.SetActive(false);
+        mission_Failed_Panel.SetActive(true);
+    }
     public void Restart_Level()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
