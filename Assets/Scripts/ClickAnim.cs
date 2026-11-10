@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ClickAnim : MonoBehaviour
+public class ClickAnimThenDestroy : MonoBehaviour
 {
  Animator animator;
 

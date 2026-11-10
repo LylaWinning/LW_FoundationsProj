@@ -1,0 +1,24 @@
+using TMPro;
+using UnityEngine;
+
+public class LevelHandler : MonoBehaviour
+{
+    public static LevelHandler Instance;
+
+    public TextMeshProUGUI win_Lose_Msg;
+
+
+    public Levels[] levels;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+}
+[System.Serializable]
+
+public class Levels
+{
+    public GameObject[] Ghost;
+}

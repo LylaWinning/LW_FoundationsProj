@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PickUpBox : MonoBehaviour 
 {
     public Transform player;
-    public float pickUpRange = 5f;
+    public float pickUpRange = 2f;
     public float throwForce = 10f;
 
     private bool isPickedUp = false;

@@ -1,16 +1,18 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 [RequireComponent(typeof(CharacterController))]
 
 public class PlayerMovement1 : MonoBehaviour
 {
-    
-  public Camera playerCamera;
+
+    public Camera playerCamera;
   public float walkSpeed = 6f;
   public float runSpeed = 12f;
-  public float jumpPower = 7f;
+  public float jumpPower = 5f;
   public float gravity = 10f;
   public float lookSpeed = 2f;
   public float lookXLimit = 45f;
@@ -77,6 +79,34 @@ void Update()
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    [Space(20)]
+    [SerializeField] TextMeshProUGUI score_txt;
+
+    private int score = 0;
+    private void OnTriggerEnter(Collider other)
+        {
+        if (other.tag == "Ghost")
+        {
+            CollectGhost();
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void CollectGhost()
+    {
+
+        score++;
+        score_txt.text = score.ToString();
+
+        if (score >= LevelHandler.Instance.levels[GameManager.Instance.current_Level].Ghost.Length)
+        {
+            LevelHandler.Instance.win_Lose_Msg.gameObject.SetActive(true);
+            LevelHandler.Instance.win_Lose_Msg.text = "You win!";
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
