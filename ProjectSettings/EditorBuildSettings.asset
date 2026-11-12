@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestScenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/MyProjectScenes/01_MainScene_HauntedRoom.unity
+    guid: d755afd609a82934da0e18bb19c16b5a
   - enabled: 1
     path: Assets/Scenes/MyProjectScenes/00_MenuScene.unity
     guid: f89e6f45bfd395541aade26986db5bb3
   - enabled: 1
-    path: Assets/Scenes/MyProjectScenes/01_MainScene_HauntedRoom.unity
-    guid: d755afd609a82934da0e18bb19c16b5a
+    path: Assets/Scenes/MyProjectScenes/01_LetterScene.unity
+    guid: 19c122b1352649142b01394eb4993dce
+  - enabled: 1
+    path: Assets/Scenes/MyProjectScenes/02_MainScene_HauntedRoom.unity
+    guid: 96e4e5bd41eca2a449df92c1a2b60fac
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
         {
             Debug.Log("Time's Up!");
             UIHandler.Instance.win_Lose_Msg.gameObject.SetActive(true);
-            UIHandler.Instance.win_Lose_Msg.text = "You didn't capture all the ghosts in time! You Lose!";
+            UIHandler.Instance.win_Lose_Msg.text = "You Lose!";
             UIHandler.Instance.On_Mission_Failed_Event.Invoke();
             time_Left = 0;
             StopTimer();
